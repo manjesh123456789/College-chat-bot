@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Admission Chatbot</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 1rem;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff6347;
+        }
+
+        .hero {
+            background: url('your-background-image.jpg') no-repeat center center/cover;
+            color: #fff;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        section {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #333;
+        }
+
+        .feature-item {
+            margin-bottom: 1rem;
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            margin-top: 1rem;
+        }
+
+        form input, form textarea, form button {
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        form button {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #ff6347;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .chatbot-section {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .chat-container {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-box {
+            height: 400px;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            padding: 1rem;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        .chat-message {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+
+        .chat-message.bot {
+            text-align: left;
+            background-color: #f1f1f1;
+        }
+
+        .chat-message.user {
+            text-align: right;
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        #chat-form {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #user-input {
+            flex-grow: 1;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #chat-form button {
+            padding: 0.5rem 1rem;
+            margin-left: 1rem;
+            border: none;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #chat-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ChatBot</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="chatbot.html">Chatbot</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to College Admission Chatbot</h1>
+            <p>Helping students with course details, requirements, and application updates.</p>
+        </div>
+    </section>
+    <section id="features">
+        <h2>Features</h2>
+        <div class="feature-item">
+            <h3>User Interaction</h3>
+            <p>Engages users in natural language conversations to guide them through the admission process.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Information Collection</h3>
+            <p>Prompts users to input their name, mobile number, EAMCET rank, interested courses, and intermediate hall ticket number.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Query Handling</h3>
+            <p>Responds to inquiries about course details, admission requirements, application status, and general college information.</p>
+        </div>
+        <div class="feature-item">
+            <h3>User Guidance</h3>
+            <p>Provides step-by-step guidance on how to proceed with their application, including deadlines and necessary documentation.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Feedback Mechanism</h3>
+            <p>Incorporates a feedback mechanism to improve its responses and user experience over time.</p>
+        </div>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a team dedicated to creating innovative solutions for the education sector. Our chatbot aims to streamline the college admission process and provide a seamless experience for prospective students.</p>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 College Admission Chatbot. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
